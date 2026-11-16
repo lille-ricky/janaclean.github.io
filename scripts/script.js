@@ -54,7 +54,7 @@ const translations = {
         "contact.success": "Bedankt! Uw bericht is succesvol verzonden.",
         "privacy.title": "Privacyverklaring",
         "privacy.date": "Laatst bijgewerkt: November 2026",
-        "privacy.intro": "Bij Jana Cleaning respecteren wij uw privacy en zetten we ons in om de persoonsgegevens die u met ons deelt te beschermen.",
+        "privacy.intro": "Bij Jana Cleaning respecteren wij wij uw privacy en zetten we ons in om de persoonsgegevens die u met ons deelt te beschermen.",
         "privacy.h1": "1. Informatie die wij verzamelen",
         "privacy.p1": "Wanneer u ons contactformulier invult, verzamelen wij uw naam, e-mailadres en eventuelle projectdetails in uw bericht.",
         "privacy.h2": "2. Hoe wij uw informatie gebruiken",
@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mouseX = e.clientX;
             mouseY = e.clientY;
 
-            // Spawn little bubble artifacts at intervals as the mouse moves
             const now = Date.now();
             if (now - lastParticleTime > 45) {
                 lastParticleTime = now;
@@ -117,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Smooth animation frame loop for the soap bar cursor
         function renderCursor() {
             cursorX += (mouseX - cursorX) * 0.2;
             cursorY += (mouseY - cursorY) * 0.2;
@@ -126,17 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         requestAnimationFrame(renderCursor);
 
-        // Helper to generate a small bubble artifact
         function spawnBubbleParticle(x, y) {
             const particle = document.createElement('div');
             particle.className = 'soap-particle';
             
-            // Randomize bubble sizes slightly (8px to 16px)
             const size = Math.floor(Math.random() * 9) + 8;
             particle.style.width = `${size}px`;
             particle.style.height = `${size}px`;
             
-            // Slight random offset around the cursor position
             const offsetX = (Math.random() - 0.5) * 16;
             const offsetY = (Math.random() - 0.5) * 16;
             
@@ -145,13 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             document.body.appendChild(particle);
             
-            // Remove particle after its floating animation completes
             setTimeout(() => {
                 particle.remove();
             }, 600);
         }
 
-        // Enlarge soap cursor slightly when hovering clickable items
         const interactiveElements = document.querySelectorAll('a, button, input, textarea');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
@@ -205,15 +198,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Contact Form Submission Handler
+    // 4. Contact Form Submission Handler (Web3Forms AJAX Integration)
     const contactForm = document.getElementById('contact-form');
     const successMessage = document.getElementById('form-success');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            contactForm.style.display = 'none';
-            successMessage.style.display = 'block';
+            
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = 'Envoi en cours...';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(contactForm);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+
+                const result = await response.json();
+
+                if (response.status === 200) {
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                } else {
+                    alert(result.message || 'Une erreur est survenue. Veuillez réessayer.');
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                alert('Erreur réseau. Veuillez vérifier votre connexion.');
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     }
 });
