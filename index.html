@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jana Cleaning Services | Nettoyage Professionnel</title>
+    <title>Jana Cleaning Services | Nettoyage Professionnel Bruxelles</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
-    <!-- Custom Soap Bubble Cursor Element -->
+    <!-- Custom Soap Bar Cursor Element -->
     <div class="soap-cursor" id="soap-cursor"></div>
 
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Jana Cleaning</a>
+            <a href="#" class="logo">Jana <span class="logo-accent">Cleaning</span> Brussels</a>
             
             <div class="nav-right">
                 <!-- Language Switcher with Flag Icons -->
@@ -27,6 +27,7 @@
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#about" data-i18n="nav.about">À propos</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 <li><a href="#privacy" data-i18n="nav.privacy">Confidentialité</a></li>
                 <li><a href="#contact" class="btn" data-i18n="nav.book">Réserver</a></li>
@@ -35,78 +36,114 @@
     </header>
 
     <section class="hero">
-        <h1 data-i18n="hero.title">Espaces Impeccables, Vie Sans Stress</h1>
-        <p data-i18n="hero.subtitle">Jana Cleaning propose des solutions de nettoyage résidentiel et commercial haut de gamme adaptées pour garder vos espaces impeccables à Bruxelles et alentours.</p>
-        <a href="#contact" class="btn hero-btn" data-i18n="hero.btn">Demander un devis gratuit</a>
+        <div class="hero-content">
+            <div class="badge-brussels" data-i18n="hero.badge">📍 Actif à Bruxelles & ses 19 communes</div>
+            <h1 data-i18n="hero.title">Espaces Impeccables, Excellence Bruxelloise</h1>
+            <p data-i18n="hero.subtitle">Jana Cleaning propose des solutions de nettoyage résidentiel et commercial haut de gamme adaptées aux exigences des intérieurs modernes à Bruxelles.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn hero-btn" data-i18n="hero.btn">Demander un devis gratuit</a>
+                <a href="#services" class="btn-secondary" data-i18n="hero.btn2">Découvrir nos services</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Intérieur moderne propre à Bruxelles" class="hero-img">
+        </div>
     </section>
 
     <section id="services" class="section">
-        <h2 class="section-title" data-i18n="services.title">Nos Services Professionnels</h2>
+        <h2 class="section-title" data-i18n="services.title">Nos Services sur Mesure</h2>
         <div class="services-grid">
             <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Nettoyage résidentiel" class="card-img">
+                </div>
                 <h3 data-i18n="service1.title">Nettoyage Résidentiel</h3>
-                <p data-i18n="service1.desc">Nettoyage en profondeur hebdomadaire ou bi-hebdomadaire des salons, cuisines, salles de bains et chambres selon votre emploi du temps.</p>
+                <p data-i18n="service1.desc">Entretien régulier ou approfondi pour appartements et maisons bruxelloises, respectueux de vos surfaces et de votre rythme.</p>
             </div>
             <div class="card">
-                <h3 data-i18n="service2.title">Grand Nettoyage</h3>
-                <p data-i18n="service2.desc">Nettoyage minutieux de fond en comble ciblant les plinthes, appuis de fenêtres, appareils électroménagers et zones difficiles d'accès.</p>
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80" alt="Grand nettoyage" class="card-img">
+                </div>
+                <h3 data-i18n="service2.title">Grand Nettoyage & Fin de Chantier</h3>
+                <p data-i18n="service2.desc">Intervention minutieuse post-rénovation ou avant emménagement pour redonner tout son éclat à votre bien immobilier.</p>
             </div>
             <div class="card">
-                <h3 data-i18n="service3.title">Bureaux et Commercial</h3>
-                <p data-i18n="service3.desc">Maintenez un espace de travail impeccable et productif pour votre équipe et vos clients grâce à des plans d'entretien sur mesure.</p>
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Bureaux et commercial" class="card-img">
+                </div>
+                <h3 data-i18n="service3.title">Bureaux & Espaces Professionnels</h3>
+                <p data-i18n="service3.desc">Garantissez un environnement de travail sain et accueillant pour vos équipes et clients au cœur de la capitale.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;" data-i18n="about.title">Pourquoi Choisir Jana Cleaning ?</h2>
+                <p data-i18n="about.p1">Basés à Bruxelles, nous comprenons les attentes spécifiques des propriétaires et professionnels locaux. Notre équipe combine rigueur professionnelle, produits écologiques de qualité et flexibilité horaire.</p>
+                <ul class="about-list">
+                    <li data-i18n="about.li1">✔ Équipe de confiance formée et rigoureuse</li>
+                    <li data-i18n="about.li2">✔ Produits respectueux de l'environnement</li>
+                    <li data-i18n="about.li3">✔ Devis transparent et sans engagement sous 24h</li>
+                </ul>
+            </div>
+            <div class="about-badge-card">
+                <span class="brussels-flag-icon">🇧🇪</span>
+                <h3 data-i18n="about.cardTitle">100% Gauffre Authentique</h3>
+                <p data-i18n="about.cardDesc">Interventions rapides dans toutes les communes de Bruxelles-Capitale.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section">
-    <h2 class="section-title" data-i18n="contact.title">Contactez-nous</h2>
-    <div class="contact-container">
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="0b34823d-1b7f-4b19-acae-cfee06a7a4d4">
-            
-            <!-- Optional: Subject line that will appear in your inbox email -->
-            <input type="hidden" name="subject" value="Nouvelle communication de devis - Jana Cleaning">
+        <h2 class="section-title" data-i18n="contact.title">Contactez-nous</h2>
+        <div class="contact-container">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="0b34823d-1b7f-4b19-acae-cfee06a7a4d4">
+                <input type="hidden" name="subject" value="Nouvelle demande de devis - Jana Cleaning Bruxelles">
 
-            <div class="form-group">
-                <label for="name" data-i18n="contact.name">Votre Nom</label>
-                <input type="text" id="name" name="name" required placeholder="Gjyl Jana">
-            </div>
-            <div class="form-group">
-                <label for="email" data-i18n="contact.email">Adresse Email</label>
-                <input type="email" id="email" name="email" required placeholder="john@example.com">
-            </div>
-            <div class="form-group">
-                <label for="message" data-i18n="contact.message">Comment pouvons-nous vous aider ?</label>
-                <textarea id="message" name="message" required placeholder="Parlez-nous de votre espace..."></textarea>
-            </div>
-            <button type="submit" class="btn submit-btn" data-i18n="contact.btn">Envoyer le message</button>
-        </form>
-        <div id="form-success" class="success-message" style="display: none;" data-i18n="contact.success">Merci ! Votre message a bien été envoyé.</div>
-    </div>
-</section>
+                <div class="form-group">
+                    <label for="name" data-i18n="contact.name">Votre Nom</label>
+                    <input type="text" id="name" name="name" required placeholder="Gjyl Jana">
+                </div>
+                <div class="form-group">
+                    <label for="email" data-i18n="contact.email">Adresse Email</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message" data-i18n="contact.message">Comment pouvons-nous vous aider ?</label>
+                    <textarea id="message" name="message" required placeholder="Décrivez votre espace à Bruxelles..."></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn" data-i18n="contact.btn">Envoyer le message</button>
+            </form>
+            <div id="form-success" class="success-message" style="display: none;" data-i18n="contact.success">Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.</div>
+        </div>
+    </section>
 
     <section id="privacy" class="section">
         <h2 class="section-title" data-i18n="privacy.title">Politique de Confidentialité</h2>
         <div class="privacy-box">
             <p><strong data-i18n="privacy.date">Dernière mise à jour : Novembre 2026</strong></p>
-            <p data-i18n="privacy.intro">Chez Jana Cleaning, nous respectons votre vie privée et nous nous engageons à protéger les données personnelles que vous partagez avec nous.</p>
+            <p data-i18n="privacy.intro">Chez Jana Cleaning (Bruxelles), nous respectons votre vie privée et protégeons vos données conformément au RGPD.</p>
             
             <h3 data-i18n="privacy.h1">1. Informations que nous recueillons</h3>
-            <p data-i18n="privacy.p1">Lorsque vous remplissez notre formulaire de contact, nous recueillons votre nom, votre adresse e-mail et les détails du projet fournis dans votre message.</p>
+            <p data-i18n="privacy.p1">Lorsque vous remplissez notre formulaire, nous recueillons votre nom, e-mail et les détails de votre demande de nettoyage.</p>
             
-            <h3 data-i18n="privacy.h2">2. Comment nous utilisons vos informations</h3>
-            <p data-i18n="privacy.p2">Nous utilisons ces informations uniquement pour répondre à vos demandes, fournir des estimations de nettoyage précises et coordonner la planification des interventions.</p>
+            <h3 data-i18n="privacy.h2">2. Utilisation des données</h3>
+            <p data-i18n="privacy.p2">Ces informations servent exclusivement à répondre à vos demandes de devis et planifier nos interventions à Bruxelles.</p>
             
-            <h3 data-i18n="privacy.h3">3. Sécurité des données</h3>
-            <p data-i18n="privacy.p3">Nous mettons en œuvre des mesures de protection techniques appropriées pour sécuriser vos informations contre tout accès ou divulgation non autorisés.</p>
+            <h3 data-i18n="privacy.h3">3. Sécurité</h3>
+            <p data-i18n="privacy.p3">Nous appliquons des mesures de sécurité strictes pour empêcher tout accès non autorisé à vos informations personnelles.</p>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <p data-i18n="footer.copy">&copy; 2026 Jana Cleaning. Tous droits réservés.</p>
+            <p data-i18n="footer.copy">&copy; 2026 Jana Cleaning Bruxelles. Tous droits réservés.</p>
             <ul class="footer-links">
                 <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#about" data-i18n="nav.about">À propos</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 <li><a href="#privacy" data-i18n="nav.privacy">Confidentialité</a></li>
             </ul>

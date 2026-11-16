@@ -27,15 +27,14 @@ body {
     background-color: var(--bg-dark);
     line-height: 1.6;
     overflow-x: hidden;
-    cursor: none; /* Hides default system cursor */
+    cursor: none;
 }
 
-/* Ensure default cursor is hidden on all interactive elements as well */
 a, button, input, textarea {
     cursor: none;
 }
 
-/* Custom Glossy Soap Bar Cursor (Desktop Only) */
+/* Custom Glossy Soap Bar Cursor */
 .soap-cursor {
     position: fixed;
     top: 0;
@@ -58,7 +57,6 @@ a, button, input, textarea {
     height: 28px;
 }
 
-/* Floating Bubble Trail Artifacts */
 .soap-particle {
     position: fixed;
     pointer-events: none;
@@ -81,7 +79,6 @@ a, button, input, textarea {
     }
 }
 
-/* Fallback: re-enable normal cursor on touch/mobile devices where custom cursors aren't applicable */
 @media (hover: none) and (pointer: coarse) {
     body, a, button, input, textarea {
         cursor: auto;
@@ -100,7 +97,7 @@ header {
 }
 
 .nav-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 1.5rem;
     display: flex;
@@ -109,11 +106,15 @@ header {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 800;
-    color: var(--primary);
+    color: var(--text-main);
     text-decoration: none;
     letter-spacing: -0.5px;
+}
+
+.logo-accent {
+    color: var(--primary);
 }
 
 .nav-right {
@@ -206,77 +207,208 @@ header {
     color: #090d16;
 }
 
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Hero Section with Image Layout */
 .hero {
-    max-width: 1100px;
-    margin: 3rem auto;
+    max-width: 1200px;
+    margin: 4rem auto;
     padding: 0 1.5rem;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.badge-brussels {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    color: var(--primary);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
 }
 
 .hero h1 {
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 800;
     color: var(--text-main);
     margin-bottom: 1rem;
     letter-spacing: -1px;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
     color: var(--text-muted);
-    max-width: 650px;
-    margin: 0 auto 2rem auto;
+    margin-bottom: 2rem;
 }
 
-.hero-btn {
-    padding: 0.8rem 1.8rem; 
-    font-size: 1.1rem;
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+}
+
+.hero-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hero-image-wrapper:hover .hero-img {
+    transform: scale(1.03);
 }
 
 .section {
-    max-width: 1100px;
-    margin: 4rem auto;
+    max-width: 1200px;
+    margin: 5rem auto;
     padding: 0 1.5rem;
 }
 
 .section-title {
     text-align: center;
-    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
     margin-bottom: 2.5rem;
     font-weight: 700;
 }
 
+/* Services Grid with Cards */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
 
 .card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 2.5rem 2rem;
     border-radius: 12px;
+    overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
     transition: var(--transition);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     border-color: var(--primary);
-    box-shadow: 0 10px 20px -3px rgba(56, 189, 248, 0.1);
+    box-shadow: 0 12px 24px -4px rgba(56, 189, 248, 0.12);
+}
+
+.card-img-wrap {
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.05);
 }
 
 .card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+    margin: 1.5rem 1.5rem 0.75rem 1.5rem;
+    font-size: 1.25rem;
     color: var(--text-main);
 }
 
 .card p {
+    margin: 0 1.5rem 1.5rem 1.5rem;
     color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
+/* About Section */
+.about-section {
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.5) 0%, rgba(9, 13, 22, 0.8) 100%);
+    padding: 4rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.about-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.about-badge-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem 2rem;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.brussels-flag-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.about-badge-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-badge-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Contact Container */
 .contact-container {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -300,7 +432,7 @@ header {
 .form-group input, .form-group textarea {
     width: 100%;
     padding: 0.8rem;
-    background: #090d16;
+    background: var(--bg-dark);
     border: 1px solid var(--border-color);
     color: var(--text-main);
     border-radius: 6px;
@@ -360,7 +492,7 @@ footer {
 }
 
 .footer-content {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
@@ -386,7 +518,21 @@ footer {
     color: var(--white);
 }
 
-/* Tablet & Mobile Responsive Adaptations */
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin: 2rem auto;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -407,8 +553,5 @@ footer {
     }
     .nav-links.active {
         display: flex;
-    }
-    .hero {
-        margin: 2rem auto;
     }
 }
