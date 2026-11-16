@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jana Cleaning Services | Nettoyage Professionnel</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <!-- Custom Soap Bubble Cursor Element -->
+    <div class="soap-cursor" id="soap-cursor"></div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Jana Cleaning</a>
+            
+            <div class="nav-right">
+                <!-- Language Switcher with Flag Icons -->
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇧🇪 FR</button>
+                    <button class="lang-btn" data-lang="nl" title="Nederlands">🇧🇪 NL</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧 EN</button>
+                </div>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="#privacy" data-i18n="nav.privacy">Confidentialité</a></li>
+                <li><a href="#contact" class="btn" data-i18n="nav.book">Réserver</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 data-i18n="hero.title">Espaces Impeccables, Vie Sans Stress</h1>
+        <p data-i18n="hero.subtitle">Jana Cleaning propose des solutions de nettoyage résidentiel et commercial haut de gamme adaptées pour garder vos espaces impeccables à Bruxelles et alentours.</p>
+        <a href="#contact" class="btn hero-btn" data-i18n="hero.btn">Demander un devis gratuit</a>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title" data-i18n="services.title">Nos Services Professionnels</h2>
+        <div class="services-grid">
+            <div class="card">
+                <h3 data-i18n="service1.title">Nettoyage Résidentiel</h3>
+                <p data-i18n="service1.desc">Nettoyage en profondeur hebdomadaire ou bi-hebdomadaire des salons, cuisines, salles de bains et chambres selon votre emploi du temps.</p>
+            </div>
+            <div class="card">
+                <h3 data-i18n="service2.title">Grand Nettoyage</h3>
+                <p data-i18n="service2.desc">Nettoyage minutieux de fond en comble ciblant les plinthes, appuis de fenêtres, appareils électroménagers et zones difficiles d'accès.</p>
+            </div>
+            <div class="card">
+                <h3 data-i18n="service3.title">Bureaux et Commercial</h3>
+                <p data-i18n="service3.desc">Maintenez un espace de travail impeccable et productif pour votre équipe et vos clients grâce à des plans d'entretien sur mesure.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title" data-i18n="contact.title">Contactez-nous</h2>
+        <div class="contact-container">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name" data-i18n="contact.name">Votre Nom</label>
+                    <input type="text" id="name" name="name" required placeholder="Emer Mbiemer">
+                </div>
+                <div class="form-group">
+                    <label for="email" data-i18n="contact.email">Adresse Email</label>
+                    <input type="email" id="email" name="email" required placeholder="pasterti@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message" data-i18n="contact.message">Comment pouvons-nous vous aider ?</label>
+                    <textarea id="message" name="message" required placeholder="Parlez-nous de votre espace..."></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn" data-i18n="contact.btn">Envoyer le message</button>
+            </form>
+            <div id="form-success" class="success-message" style="display: none;" data-i18n="contact.success">Merci ! Votre message a bien été envoyé.</div>
+        </div>
+    </section>
+
+    <section id="privacy" class="section">
+        <h2 class="section-title" data-i18n="privacy.title">Politique de Confidentialité</h2>
+        <div class="privacy-box">
+            <p><strong data-i18n="privacy.date">Dernière mise à jour : Novembre 2026</strong></p>
+            <p data-i18n="privacy.intro">Chez Jana Cleaning, nous respectons votre vie privée et nous nous engageons à protéger les données personnelles que vous partagez avec nous.</p>
+            
+            <h3 data-i18n="privacy.h1">1. Informations que nous recueillons</h3>
+            <p data-i18n="privacy.p1">Lorsque vous remplissez notre formulaire de contact, nous recueillons votre nom, votre adresse e-mail et les détails du projet fournis dans votre message.</p>
+            
+            <h3 data-i18n="privacy.h2">2. Comment nous utilisons vos informations</h3>
+            <p data-i18n="privacy.p2">Nous utilisons ces informations uniquement pour répondre à vos demandes, fournir des estimations de nettoyage précises et coordonner la planification des interventions.</p>
+            
+            <h3 data-i18n="privacy.h3">3. Sécurité des données</h3>
+            <p data-i18n="privacy.p3">Nous mettons en œuvre des mesures de protection techniques appropriées pour sécuriser vos informations contre tout accès ou divulgation non autorisés.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p data-i18n="footer.copy">&copy; 2026 Jana Cleaning. Tous droits réservés.</p>
+            <ul class="footer-links">
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="#privacy" data-i18n="nav.privacy">Confidentialité</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
